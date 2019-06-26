@@ -1,0 +1,15 @@
+git clone https://github.com/Tahlor/warp-ctc
+
+module load cmake
+module load cuda
+export CUDA_HOME="/apps/cuda/10.1"
+
+cd warp-ctc
+mkdir build
+cd ..
+gedit CMakeLists.txt 
+cd build/
+cmake ..
+make
+cd ../pytorch_binding
+python setup.py install
